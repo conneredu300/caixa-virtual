@@ -23,7 +23,7 @@ app.use('/api', require('./src/routes'));
 app.set("port", process.env.PORT || 3001);
 
 app.get("/", (req, res) => {
-    res.send("Welcome to a basic express App");
+    res.send("Bem vindo ao caixa virtual");
 });
 
 app.listen(app.get("port"), () => {
