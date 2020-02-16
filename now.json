@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [{ "src": "server.js", "use": "@now/node-server" }],
+    "routes": [
+        {
+            "src": "/api/caixa",
+            "dest": "/server.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/api/movimentacao",
+            "dest": "/server.js",
+            "methods": ["GET", "POST"]
+        },
+        {
+            "src": "/api/movimentacao-log",
+            "dest": "/server.js",
+            "methods": ["GET", "POST"]
+        }
+    ]
+}
