@@ -8,9 +8,7 @@ const MovimentacaoLogController = require('./controllers/MovimentacaoLogControll
 routes.get('/movimentacao', MovimentacaoController.index);
 routes.get('/movimentacao/:id', MovimentacaoController.show);
 routes.post('/movimentacao/', MovimentacaoController.store); //Entrada de caixa
-routes.delete('/movimentacao/:id', MovimentacaoController.destroy); //Saída de caixa
 
-routes.delete('/movimentacao-log/:id', MovimentacaoLogController.destroy); //Excluir log
 routes.get('/movimentacao-log/', MovimentacaoLogController.index); //Logs das movimentações
 routes.get('/movimentacao-log/:id', MovimentacaoLogController.show);
 

@@ -57,23 +57,5 @@ module.exports = {
         const movimentacao = await Movimentacao.findById(request.params.id);
 
         return response.json(movimentacao);
-    }, 
-
-    async destroy(request, response) {
-        const movimentacao = await Movimentacao.findByIdAndDelete(request.params.id);
-        let caixa = await Caixa.findOne();
-
-        await MovimentacaoLog.create({
-            descricao: movimentacao.descricao,
-            tipo: "saída",
-            valor: movimentacao.valor,
-            data: movimentacao.data
-        });
-
-        caixa.saldoTotal -= movimentacao.valor || 0;
-
-        await caixa.save();
-
-        return response.json(movimentacao);
     }
 };

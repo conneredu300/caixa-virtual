@@ -9,7 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 //DB SETTINGS
-const uri = "mongodb+srv://eduardo_jose_luciano_junior:admin@cluster0-xqinj.mongodb.net/test?retryWrites=true&w=majority";
+let uri = "mongodb+srv://eduardo_jose_luciano_junior:admin@cluster0-xqinj.mongodb.net/test?retryWrites=true&w=majority";
+
+//uri = "mongodb://localhost:27017/nodeapi"
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true});
 
