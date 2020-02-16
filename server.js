@@ -17,6 +17,10 @@ app.use('/api', require('./src/routes'));
 
 app.set("port", process.env.PORT || 3001);
 
+app.get("/", (req, res) => {
+    res.send("Welcome to a basic express App");
+});
+
 app.listen(app.get("port"), () => {
     console.log(`Server on port ${app.get("port")}`);
 });

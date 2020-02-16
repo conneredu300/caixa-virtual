@@ -1,9 +1,9 @@
 {
     "version": 2,
-    "builds": [{ "src": "server.js", "use": "@now/node-server" }],
+    "builds": [{ "src": "server.js", "use": "@now /node" }],
     "routes": [
         {
-            "src": "/api/caixa",
+            "src": "/",
             "dest": "/server.js",
             "methods": ["GET"]
         },
