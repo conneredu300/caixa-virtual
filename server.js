@@ -9,10 +9,14 @@ app.use(cors());
 app.use(express.json());
 
 //DB SETTINGS
-mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://mongo:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true});
 
 requireDir('./src/models');
 
 app.use('/api', require('./src/routes'));
 
-app.listen(3001);
+app.set("port", process.env.PORT || 3001);
+
+app.listen(app.get("port"), () => {
+    console.log(`Server on port ${app.get("port")}`);
+});
