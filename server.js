@@ -9,7 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 //DB SETTINGS
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true});
+const uri = "mongodb+srv://eduardo_jose_luciano_junior:admin@cluster0-xqinj.mongodb.net/test?retryWrites=true&w=majority";
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true});
+
 
 requireDir('./src/models');
 
