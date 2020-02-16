@@ -1,6 +1,7 @@
 {
     "version": 2,
     "builds": [{ "src": "server.js", "use": "@now /node" }],
+    "env": {"MONGODB_URI": "@mongo-uri"},
     "routes": [
         {
             "src": "/",

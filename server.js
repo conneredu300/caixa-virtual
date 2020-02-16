@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //DB SETTINGS
-mongoose.connect('mongodb://mongo:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true});
 
 requireDir('./src/models');
 
